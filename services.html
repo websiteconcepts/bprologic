@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Solutions - AskAIVault</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+		<style>
+			body, input, select, textarea { font-family: 'Inter', sans-serif; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			.solutions-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+			}
+
+			.solution-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2.5em 2em;
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: 1px solid #eee;
+			}
+
+			.solution-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+			}
+
+			.solution-icon {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1.2em;
+				font-size: 1.8rem;
+				color: #fff;
+				transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+
+			.solution-card:hover .solution-icon {
+				transform: scale(1.1);
+			}
+
+			.solution-icon.blue    { background: linear-gradient(135deg, #667eea, #764ba2); }
+			.solution-icon.teal    { background: linear-gradient(135deg, #38b2ac, #319795); }
+			.solution-icon.pink    { background: linear-gradient(135deg, #ed64a6, #d53f8c); }
+			.solution-icon.orange  { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+			.solution-icon.purple  { background: linear-gradient(135deg, #9f7aea, #805ad5); }
+			.solution-icon.green   { background: linear-gradient(135deg, #48bb78, #38a169); }
+			.solution-icon.indigo  { background: linear-gradient(135deg, #5a67d8, #4c51bf); }
+			.solution-icon.red     { background: linear-gradient(135deg, #fc8181, #e53e3e); }
+			.solution-icon.cyan    { background: linear-gradient(135deg, #4fd1c5, #319795); }
+			.solution-icon.yellow  { background: linear-gradient(135deg, #ecc94b, #d69e2e); }
+			.solution-icon.slate   { background: linear-gradient(135deg, #718096, #4a5568); }
+			.solution-icon.rose    { background: linear-gradient(135deg, #f687b3, #d53f8c); }
+
+			.solution-card h3 {
+				font-size: 1.15em;
+				margin: 0 0 0.6em 0;
+				color: #2d3748;
+			}
+
+			.solution-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			@media screen and (max-width: 980px) {
+				.solutions-grid { grid-template-columns: repeat(2, 1fr); }
+			}
+
+			@media screen and (max-width: 480px) {
+				.solutions-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="https://askaivault.com/images/widelogo.png" alt="AskAIVault - AI-powered insights and solutions" /></span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="services.html">Solutions</a></li>
+							<li><a href="privacy.html">Privacy Policy</a></li>
+							<li><a href="terms.html">Terms of Service</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Our Solutions</h1>
+								<p>End-to-end technology solutions designed to accelerate your business and keep you ahead of the curve.</p>
+							</header>
+
+							<div class="solutions-grid">
+
+								<div class="solution-card">
+									<div class="solution-icon blue">
+										<i class="fa-solid fa-robot"></i>
+									</div>
+									<h3>AI Solutions</h3>
+									<p>Custom AI integrations, chatbots, and intelligent automation tailored to your business needs.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon purple">
+										<i class="fa-solid fa-brain"></i>
+									</div>
+									<h3>AI Development</h3>
+									<p>End-to-end AI application development using machine learning, NLP, and computer vision technologies.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon teal">
+										<i class="fa-solid fa-server"></i>
+									</div>
+									<h3>Server Management</h3>
+									<p>Reliable server setup, monitoring, and maintenance to keep your infrastructure running 24/7.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon orange">
+										<i class="fa-solid fa-code"></i>
+									</div>
+									<h3>Web Application Development</h3>
+									<p>Full-stack web development with modern frameworks, responsive design, and scalable architecture.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon indigo">
+										<i class="fa-solid fa-cloud"></i>
+									</div>
+									<h3>Cloud &amp; DevOps</h3>
+									<p>Cloud migration, CI/CD pipelines, containerization, and infrastructure automation for seamless deployments.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon green">
+										<i class="fa-solid fa-chart-line"></i>
+									</div>
+									<h3>Data &amp; Analytics</h3>
+									<p>Transform raw data into actionable insights with custom dashboards, reporting, and data pipeline solutions.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon cyan">
+										<i class="fa-solid fa-plug"></i>
+									</div>
+									<h3>API Integration</h3>
+									<p>Seamless third-party API integrations to connect your systems and streamline workflows.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon red">
+										<i class="fa-solid fa-shield-halved"></i>
+									</div>
+									<h3>Cybersecurity</h3>
+									<p>Protect your digital assets with vulnerability assessments, penetration testing, and security audits.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon pink">
+										<i class="fa-solid fa-mobile-screen-button"></i>
+									</div>
+									<h3>Mobile App Development</h3>
+									<p>Native and cross-platform mobile app development for iOS and Android.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon yellow">
+										<i class="fa-solid fa-lightbulb"></i>
+									</div>
+									<h3>AI Consulting</h3>
+									<p>Strategic guidance on adopting AI technologies to drive innovation and business growth.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon slate">
+										<i class="fa-solid fa-database"></i>
+									</div>
+									<h3>Database Solutions</h3>
+									<p>Database design, optimization, migration, and management for SQL and NoSQL systems.</p>
+								</div>
+
+								<div class="solution-card">
+									<div class="solution-icon rose">
+										<i class="fa-solid fa-headset"></i>
+									</div>
+									<h3>IT Support</h3>
+									<p>Comprehensive technical support and troubleshooting to keep your operations running smoothly.</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="https://formsubmit.co/contact@askaivault.com">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+									<ul class="icons">
+										<li><a href="https://x.com/ask_ai_vault" class="icon brands style2" style="display:inline-flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="label">X</span></a></li>
+										<li><a href="https://www.linkedin.com/company/ask-ai-vault/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+										<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+										<li><a href="mailto:contact@askaivault.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; AskAIVault. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
