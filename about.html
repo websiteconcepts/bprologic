@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>About Us - AskAIVault</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+		<style>
+			body, input, select, textarea { font-family: 'Inter', sans-serif; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			.about-hero {
+				margin-bottom: 2.5em;
+			}
+
+			.about-hero p {
+				font-size: 1.15em;
+				line-height: 1.8;
+			}
+
+			.values-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+				margin-bottom: 2.5em;
+			}
+
+			.value-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2em 1.5em;
+				text-align: center;
+				border: 1px solid #eee;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.value-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+			}
+
+			.value-icon {
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1em;
+				font-size: 1.4rem;
+				color: #fff;
+			}
+
+			.value-icon.blue   { background: linear-gradient(135deg, #667eea, #764ba2); }
+			.value-icon.teal   { background: linear-gradient(135deg, #38b2ac, #319795); }
+			.value-icon.orange { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+			.value-icon.green  { background: linear-gradient(135deg, #48bb78, #38a169); }
+			.value-icon.purple { background: linear-gradient(135deg, #9f7aea, #805ad5); }
+			.value-icon.red    { background: linear-gradient(135deg, #fc8181, #e53e3e); }
+
+			.value-card h3 {
+				font-size: 1.05em;
+				margin: 0 0 0.5em 0;
+				color: #2d3748;
+			}
+
+			.value-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.why-section {
+				margin-top: 2em;
+			}
+
+			.why-section ul {
+				margin-top: 1em;
+			}
+
+			.why-section ul li {
+				margin-bottom: 0.5em;
+			}
+
+			@media screen and (max-width: 980px) {
+				.values-grid { grid-template-columns: repeat(2, 1fr); }
+			}
+
+			@media screen and (max-width: 480px) {
+				.values-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<div id="header-placeholder"></div>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>About Us</h1>
+							</header>
+
+							<div class="about-hero">
+								<p>AskAIVault is a technology company focused on delivering intelligent, scalable, and secure digital solutions. We combine the power of artificial intelligence with modern software engineering to help businesses automate processes, unlock insights, and build products that make a real impact.</p>
+								<p>Founded with the belief that every business deserves access to cutting-edge technology, we work with startups, growing companies, and enterprises to turn complex challenges into elegant solutions.</p>
+							</div>
+
+							<h2>What We Do</h2>
+							<p>From AI-powered chatbots and custom machine learning models to full-stack web applications and cloud infrastructure, we provide end-to-end technology services. Our team handles everything from initial consultation and architecture design to development, deployment, and ongoing support.</p>
+							<p>Whether you need to build a new product from scratch, modernize legacy systems, or integrate AI into your existing workflows, we have the expertise to deliver.</p>
+
+							<h2>Our Values</h2>
+							<div class="values-grid">
+								<div class="value-card">
+									<div class="value-icon blue">
+										<i class="fa-solid fa-bullseye"></i>
+									</div>
+									<h3>Innovation First</h3>
+									<p>We stay ahead of the curve, adopting emerging technologies to deliver future-ready solutions.</p>
+								</div>
+
+								<div class="value-card">
+									<div class="value-icon teal">
+										<i class="fa-solid fa-handshake"></i>
+									</div>
+									<h3>Client Partnership</h3>
+									<p>We treat every project as a partnership, working closely with you to understand your goals and deliver results.</p>
+								</div>
+
+								<div class="value-card">
+									<div class="value-icon orange">
+										<i class="fa-solid fa-shield-halved"></i>
+									</div>
+									<h3>Security & Trust</h3>
+									<p>Your data and privacy are paramount. We build with security best practices at every layer.</p>
+								</div>
+
+								<div class="value-card">
+									<div class="value-icon green">
+										<i class="fa-solid fa-leaf"></i>
+									</div>
+									<h3>Simplicity</h3>
+									<p>We believe powerful technology should be simple to use. Clean design and intuitive experiences drive everything we build.</p>
+								</div>
+
+								<div class="value-card">
+									<div class="value-icon purple">
+										<i class="fa-solid fa-arrows-spin"></i>
+									</div>
+									<h3>Agility</h3>
+									<p>We move fast without cutting corners, adapting quickly to evolving requirements and market changes.</p>
+								</div>
+
+								<div class="value-card">
+									<div class="value-icon red">
+										<i class="fa-solid fa-heart"></i>
+									</div>
+									<h3>Quality</h3>
+									<p>Every line of code, every design decision, and every deployment is held to the highest standard.</p>
+								</div>
+							</div>
+
+							<div class="why-section">
+								<h2>Why Choose AskAIVault?</h2>
+								<ul>
+									<li><strong>AI Expertise</strong> &mdash; Deep experience in machine learning, NLP, computer vision, and generative AI</li>
+									<li><strong>Full-Stack Capability</strong> &mdash; From frontend to backend, cloud to mobile, we cover the entire stack</li>
+									<li><strong>Transparent Process</strong> &mdash; Clear communication, regular updates, and no hidden surprises</li>
+									<li><strong>Scalable Solutions</strong> &mdash; We build for today and architect for tomorrow</li>
+									<li><strong>Dedicated Support</strong> &mdash; Ongoing maintenance and support to keep your systems running smoothly</li>
+								</ul>
+							</div>
+
+							<h2>Get in Touch</h2>
+							<p>Ready to explore how AI and technology can transform your business? We'd love to hear from you.</p>
+							<p>Email: <a href="mailto:contact@askaivault.com">contact@askaivault.com</a></p>
+							<p>Website: <a href="https://askaivault.com">https://askaivault.com</a></p>
+						</div>
+					</div>
+
+				<div id="footer-placeholder"></div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/includes.js"></script>
+
+	</body>
+</html>
