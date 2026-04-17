@@ -10,12 +10,21 @@ const MENU_HTML = `
 </nav>
 `;
 
-class HeaderInjector {
+class HtmlReplacer {
   constructor(html) {
     this.html = html;
   }
   element(element) {
     element.replace(this.html, { html: true });
+  }
+}
+
+class HtmlAppender {
+  constructor(html) {
+    this.html = html;
+  }
+  element(element) {
+    element.append(this.html, { html: true });
   }
 }
 
@@ -38,18 +47,33 @@ export default {
       return response;
     }
 
-    // Fetch header from KV
-    const headerHtml = await env.TEMPLATES.get('header');
-    if (!headerHtml) {
-      return response;
-    }
+    // Fetch all template parts from KV
+    const [headerHtml, footerHtml, footerScripts, headAppend] = await Promise.all([
+      env.TEMPLATES.get('header_content'),
+      env.TEMPLATES.get('footer_content'),
+      env.TEMPLATES.get('footer_scripts'),
+      env.TEMPLATES.get('head_append')
+    ]);
 
     // Combine KV header + menu
-    const fullHeader = headerHtml + MENU_HTML;
+    const fullHeader = headerHtml ? headerHtml + MENU_HTML : null;
 
-    // Use HTMLRewriter to inject into <div id="header"></div>
-    return new HTMLRewriter()
-      .on('div#header-slot', new HeaderInjector(fullHeader))
-      .transform(response);
+    // Build HTMLRewriter with available injections
+    let rewriter = new HTMLRewriter();
+
+    if (fullHeader) {
+      rewriter = rewriter.on('div#header_content', new HtmlReplacer(fullHeader));
+    }
+    if (footerHtml) {
+      rewriter = rewriter.on('div#footer_content', new HtmlReplacer(footerHtml));
+    }
+    if (footerScripts) {
+      rewriter = rewriter.on('div#footer_scripts', new HtmlReplacer(footerScripts));
+    }
+    if (headAppend) {
+      rewriter = rewriter.on('head', new HtmlAppender(headAppend));
+    }
+
+    return rewriter.transform(response);
   }
 };

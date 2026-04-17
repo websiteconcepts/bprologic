@@ -2,102 +2,12 @@
 <html>
 	<head>
 		<title>Solutions - AskAIVault</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-		<style>
-			body, input, select, textarea { font-family: 'Inter', sans-serif; }
-			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
 
-			.solutions-grid {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 2em;
-				margin-top: 2em;
-			}
-
-			.solution-card {
-				background: #ffffff;
-				border-radius: 12px;
-				padding: 2.5em 2em;
-				text-align: center;
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				border: 1px solid #eee;
-			}
-
-			.solution-card:hover {
-				transform: translateY(-6px);
-				box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-			}
-
-			.solution-icon {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				margin-bottom: 1.2em;
-				font-size: 1.8rem;
-				color: #fff;
-				transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-			}
-
-			.solution-card:hover .solution-icon {
-				transform: scale(1.1);
-			}
-
-			.solution-icon.blue    { background: linear-gradient(135deg, #667eea, #764ba2); }
-			.solution-icon.teal    { background: linear-gradient(135deg, #38b2ac, #319795); }
-			.solution-icon.pink    { background: linear-gradient(135deg, #ed64a6, #d53f8c); }
-			.solution-icon.orange  { background: linear-gradient(135deg, #ed8936, #dd6b20); }
-			.solution-icon.purple  { background: linear-gradient(135deg, #9f7aea, #805ad5); }
-			.solution-icon.green   { background: linear-gradient(135deg, #48bb78, #38a169); }
-			.solution-icon.indigo  { background: linear-gradient(135deg, #5a67d8, #4c51bf); }
-			.solution-icon.red     { background: linear-gradient(135deg, #fc8181, #e53e3e); }
-			.solution-icon.cyan    { background: linear-gradient(135deg, #4fd1c5, #319795); }
-			.solution-icon.yellow  { background: linear-gradient(135deg, #ecc94b, #d69e2e); }
-			.solution-icon.slate   { background: linear-gradient(135deg, #718096, #4a5568); }
-			.solution-icon.rose    { background: linear-gradient(135deg, #f687b3, #d53f8c); }
-
-			.solution-card h3 {
-				font-size: 1.15em;
-				margin: 0 0 0.6em 0;
-				color: #2d3748;
-			}
-
-			.solution-card p {
-				font-size: 0.9em;
-				color: #666;
-				line-height: 1.6;
-				margin: 0;
-			}
-
-			@media screen and (max-width: 980px) {
-				.solutions-grid { grid-template-columns: repeat(2, 1fr); }
-			}
-
-			@media screen and (max-width: 480px) {
-				.solutions-grid { grid-template-columns: 1fr; }
-			}
-		</style>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7YY2HDDLJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L7YY2HDDLJ');
-</script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-				<div id="header-slot"></div>
+				<div id="header_content"></div>
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -185,39 +95,11 @@
 					</div>
 
 <!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<ul class="icons">
-									<li><a href="contact.html" class="icon solid style2 fa-envelope"><span class="label">Contact</span></a></li>
-								</ul>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="https://x.com/ask_ai_vault" class="icon brands style2" style="display:inline-flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="label">X</span></a></li>
-									<li><a href="https://www.linkedin.com/company/ask-ai-vault/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; AskAIVault. All rights reserved</li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="refund.html">Refund Policy</a></li>
-							</ul>
-						</div>
-					</footer>
-
-
-
-								
-
+					<div id="footer_content"></div>
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div id="footer_scripts"></div>
 
 	</body>
 </html>
