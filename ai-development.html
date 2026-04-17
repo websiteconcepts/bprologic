@@ -2,6 +2,83 @@
 <html>
 	<head>
 		<title>AI Development - AskAIVault</title>
+		<style>
+			.detail-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+				margin-bottom: 2.5em;
+			}
+
+			.detail-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2em;
+				border: 1px solid #eee;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.detail-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+			}
+
+			.detail-card-header {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin-bottom: 1em;
+			}
+
+			.detail-card-icon {
+				width: 56px;
+				height: 56px;
+				border-radius: 12px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.4rem;
+				color: #fff;
+				flex-shrink: 0;
+				background: linear-gradient(135deg, #9f7aea, #805ad5);
+			}
+
+			.detail-card h3 {
+				font-size: 1.1em;
+				margin: 0;
+				color: #2d3748;
+			}
+
+			.detail-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.7;
+				margin: 0 0 0.8em 0;
+			}
+
+			.detail-card ul {
+				margin: 0.5em 0 0 0;
+				padding-left: 1.2em;
+			}
+
+			.detail-card ul li {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin-bottom: 0.3em;
+			}
+
+			.back-link {
+				display: inline-block;
+				margin-bottom: 1.5em;
+				font-size: 0.9em;
+			}
+
+			@media screen and (max-width: 768px) {
+				.detail-grid { grid-template-columns: 1fr; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->

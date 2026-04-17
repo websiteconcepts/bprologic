@@ -2,6 +2,81 @@
 <html>
 	<head>
 		<title>Solutions - AskAIVault</title>
+		<style>
+
+
+			.solutions-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+			}
+
+			.solution-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2.5em 2em;
+				text-align: center;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border: 1px solid #eee;
+			}
+
+			.solution-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+			}
+
+			.solution-icon {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1.2em;
+				font-size: 1.8rem;
+				color: #fff;
+				transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			}
+
+			.solution-card:hover .solution-icon {
+				transform: scale(1.1);
+			}
+
+			.solution-icon.blue    { background: linear-gradient(135deg, #667eea, #764ba2); }
+			.solution-icon.teal    { background: linear-gradient(135deg, #38b2ac, #319795); }
+			.solution-icon.pink    { background: linear-gradient(135deg, #ed64a6, #d53f8c); }
+			.solution-icon.orange  { background: linear-gradient(135deg, #ed8936, #dd6b20); }
+			.solution-icon.purple  { background: linear-gradient(135deg, #9f7aea, #805ad5); }
+			.solution-icon.green   { background: linear-gradient(135deg, #48bb78, #38a169); }
+			.solution-icon.indigo  { background: linear-gradient(135deg, #5a67d8, #4c51bf); }
+			.solution-icon.red     { background: linear-gradient(135deg, #fc8181, #e53e3e); }
+			.solution-icon.cyan    { background: linear-gradient(135deg, #4fd1c5, #319795); }
+			.solution-icon.yellow  { background: linear-gradient(135deg, #ecc94b, #d69e2e); }
+			.solution-icon.slate   { background: linear-gradient(135deg, #718096, #4a5568); }
+			.solution-icon.rose    { background: linear-gradient(135deg, #f687b3, #d53f8c); }
+
+			.solution-card h3 {
+				font-size: 1.15em;
+				margin: 0 0 0.6em 0;
+				color: #2d3748;
+			}
+
+			.solution-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			@media screen and (max-width: 980px) {
+				.solutions-grid { grid-template-columns: repeat(2, 1fr); }
+			}
+
+			@media screen and (max-width: 480px) {
+				.solutions-grid { grid-template-columns: 1fr; }
+			}
+		</style>
 
 	</head>
 	<body class="is-preload">
