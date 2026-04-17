@@ -10,6 +10,11 @@ export default {
 
     // Get header/footer from KV
     const header = await env.TEMPLATES.get("header");
+
+    return new Response(header || "HEADER NOT FOUND", {
+      headers: { "content-type": "text/html" }
+    });
+    
     const footer = await env.TEMPLATES.get("footer");
 
     // Inject into HTML
