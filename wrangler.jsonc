@@ -5,9 +5,7 @@
   "observability": {
     "enabled": true
   },
-  "assets": {
-    "directory": "."
-  },
+
   "compatibility_flags": [
     "nodejs_compat"
   ],
@@ -16,5 +14,5 @@
       "binding": "TEMPLATES",
       "id": "164ecbc791db4332944589a099e27186"
     }
-  ]
+    
 }
