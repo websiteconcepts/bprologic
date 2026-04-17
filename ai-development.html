@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>AI Development - AskAIVault</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+		<style>
+			body, input, select, textarea { font-family: 'Inter', sans-serif; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			.detail-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+				margin-bottom: 2.5em;
+			}
+
+			.detail-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2em;
+				border: 1px solid #eee;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.detail-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+			}
+
+			.detail-card-header {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin-bottom: 1em;
+			}
+
+			.detail-card-icon {
+				width: 56px;
+				height: 56px;
+				border-radius: 12px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.4rem;
+				color: #fff;
+				flex-shrink: 0;
+				background: linear-gradient(135deg, #9f7aea, #805ad5);
+			}
+
+			.detail-card h3 {
+				font-size: 1.1em;
+				margin: 0;
+				color: #2d3748;
+			}
+
+			.detail-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.7;
+				margin: 0 0 0.8em 0;
+			}
+
+			.detail-card ul {
+				margin: 0.5em 0 0 0;
+				padding-left: 1.2em;
+			}
+
+			.detail-card ul li {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin-bottom: 0.3em;
+			}
+
+			.back-link {
+				display: inline-block;
+				margin-bottom: 1.5em;
+				font-size: 0.9em;
+			}
+
+			@media screen and (max-width: 768px) {
+				.detail-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<a href="index.html" class="logo">
+								<span class="symbol"><img src="https://askaivault.com/images/widelogo.png" alt="AskAIVault - AI-powered insights and solutions" /></span>
+							</a>
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="services.html">Solutions</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<a href="services.html" class="back-link">&larr; Back to Solutions</a>
+							<header>
+								<h1>AI Development</h1>
+								<p>Custom-built AI applications that solve real business problems — from automating sales workflows to extracting intelligence from unstructured data. We build, deploy, and maintain production-grade AI systems.</p>
+							</header>
+
+							<div class="detail-grid">
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-magnifying-glass-chart"></i>
+										</div>
+										<h3>Sales Intelligence Platform</h3>
+									</div>
+									<p>AI-powered lead discovery and data enrichment that helps your sales team find and qualify prospects faster. Automatically enrich CRM data with company insights, tech stack info, and buying signals.</p>
+									<ul>
+										<li>Automated lead discovery from multiple data sources</li>
+										<li>Contact and company data enrichment</li>
+										<li>Ideal customer profile (ICP) scoring</li>
+										<li>CRM integration (Salesforce, HubSpot, Pipedrive)</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-phone-volume"></i>
+										</div>
+										<h3>Call Intelligence &amp; Objection Handling</h3>
+									</div>
+									<p>Analyze sales and support calls to automatically extract objections, winning responses, and conversation patterns. New reps get instant access to battle-tested answers.</p>
+									<ul>
+										<li>Automatic transcription and analysis of sales calls</li>
+										<li>Objection detection and response suggestions</li>
+										<li>Win/loss pattern identification</li>
+										<li>Coaching insights for sales managers</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-file-lines"></i>
+										</div>
+										<h3>Intelligent Document Processing</h3>
+									</div>
+									<p>Extract structured data from invoices, contracts, forms, and reports automatically. Eliminate manual data entry and accelerate document-heavy workflows.</p>
+									<ul>
+										<li>OCR + AI extraction from PDFs, images, and scans</li>
+										<li>Invoice and receipt processing</li>
+										<li>Contract data extraction and clause identification</li>
+										<li>Automated validation and exception flagging</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-envelope-open-text"></i>
+										</div>
+										<h3>AI Email &amp; Communication Automation</h3>
+									</div>
+									<p>Automate personalized outreach, follow-ups, and customer communication at scale. AI drafts context-aware emails based on CRM data, past interactions, and deal stage.</p>
+									<ul>
+										<li>Personalized email generation at scale</li>
+										<li>Smart follow-up sequences based on engagement</li>
+										<li>Tone and brand voice customization</li>
+										<li>Integration with email platforms and CRMs</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-chart-pie"></i>
+										</div>
+										<h3>Predictive Analytics Engine</h3>
+									</div>
+									<p>Custom ML models that forecast business outcomes — churn prediction, demand forecasting, revenue projections, and more. Turn your historical data into a competitive advantage.</p>
+									<ul>
+										<li>Customer churn and retention prediction</li>
+										<li>Demand and inventory forecasting</li>
+										<li>Revenue and pipeline forecasting</li>
+										<li>Anomaly detection for fraud and risk</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-language"></i>
+										</div>
+										<h3>NLP &amp; Text Analysis</h3>
+									</div>
+									<p>Custom natural language processing solutions for sentiment analysis, text classification, entity extraction, and content moderation tailored to your industry and data.</p>
+									<ul>
+										<li>Customer feedback and review analysis</li>
+										<li>Social media sentiment monitoring</li>
+										<li>Automated content categorization and tagging</li>
+										<li>Named entity recognition for domain-specific data</li>
+									</ul>
+								</div>
+
+							</div>
+
+							<h2>Ready to Build?</h2>
+							<p>Every AI development project starts with understanding your data and goals. <a href="contact.html">Get in touch</a> to discuss your requirements and get a custom proposal.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<ul class="icons">
+									<li><a href="contact.html" class="icon solid style2 fa-envelope"><span class="label">Contact</span></a></li>
+								</ul>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://x.com/ask_ai_vault" class="icon brands style2" style="display:inline-flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="label">X</span></a></li>
+									<li><a href="https://www.linkedin.com/company/ask-ai-vault/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; AskAIVault. All rights reserved</li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="refund.html">Refund Policy</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
