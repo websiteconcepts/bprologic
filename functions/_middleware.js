@@ -8,6 +8,9 @@ export async function onRequest(context) {
   }
 
   const header = await env.TEMPLATES.get("header");
+
+  return new Response(header || "KV NOT WORKING");
+  
   const footer = await env.TEMPLATES.get("footer");
 
   return new HTMLRewriter()
