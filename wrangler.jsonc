@@ -1,18 +1,13 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "aiv",
+  "name": "aiv-clean",
   "main": "worker.js",
   "compatibility_date": "2026-04-15",
-  "observability": {
-    "enabled": true
-  },
+
   "assets": {
     "directory": ".",
-    "binding": "ASSETS" 
+    "binding": "ASSETS"
   },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+
   "kv_namespaces": [
     {
       "binding": "TEMPLATES",
