@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Server Management - AskAIVault</title>
+		<style>
+			.detail-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
+				margin-top: 2em;
+				margin-bottom: 2.5em;
+			}
+
+			.detail-card {
+				background: #ffffff;
+				border-radius: 12px;
+				padding: 2em;
+				border: 1px solid #eee;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.detail-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+			}
+
+			.detail-card-header {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin-bottom: 1em;
+			}
+
+			.detail-card-icon {
+				width: 56px;
+				height: 56px;
+				border-radius: 12px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.4rem;
+				color: #fff;
+				flex-shrink: 0;
+				background: linear-gradient(135deg, #38b2ac, #319795);
+			}
+
+			.detail-card h3 {
+				font-size: 1.1em;
+				margin: 0;
+				color: #2d3748;
+			}
+
+			.detail-card p {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.7;
+				margin: 0 0 0.8em 0;
+			}
+
+			.detail-card ul {
+				margin: 0.5em 0 0 0;
+				padding-left: 1.2em;
+			}
+
+			.detail-card ul li {
+				font-size: 0.9em;
+				color: #666;
+				line-height: 1.6;
+				margin-bottom: 0.3em;
+			}
+
+			.back-link {
+				display: inline-block;
+				margin-bottom: 1.5em;
+				font-size: 0.9em;
+			}
+
+			@media screen and (max-width: 768px) {
+				.detail-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div id="header_content"></div>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<a href="services.html" class="back-link">&larr; Back to Solutions</a>
+							<header>
+								<h1>Server Management</h1>
+								<p>From bare-metal Linux servers to Cloudflare Workers, we manage the infrastructure that powers your business. Whether you need rock-solid performance, battle-tested security, or a modern serverless stack, we've got you covered.</p>
+							</header>
+
+							<div class="detail-grid">
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-gauge-high"></i>
+										</div>
+										<h3>Performance &amp; Security</h3>
+									</div>
+									<p>Harden, optimize, and monitor your servers around the clock. We tune your stack for speed and lock it down against threats &mdash; without slowing you down.</p>
+									<ul>
+										<li>Server hardening and OS-level security patching</li>
+										<li>Firewall, intrusion detection, and DDoS mitigation</li>
+										<li>Performance tuning, caching, and load optimization</li>
+										<li>24/7 uptime monitoring with proactive alerts</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-server"></i>
+										</div>
+										<h3>Web Services &amp; Linux Admin</h3>
+									</div>
+									<p>End-to-end management of Apache, Nginx, Ubuntu/Linux servers, and modern application runtimes &mdash; tuned for performance and scale.</p>
+									<ul>
+										<li>Apache &amp; Nginx: virtual hosts, reverse proxy, load balancing, SSL/TLS</li>
+										<li>Ubuntu/Debian/CentOS server setup, patching, and hardening</li>
+										<li>Node.js, PHP-FPM, Python, and Ruby runtime management</li>
+										<li>Database hosting (MySQL, PostgreSQL, MongoDB, Redis) and mail servers</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-brands fa-aws"></i>
+										</div>
+										<h3>Amazon Web Services (AWS)</h3>
+									</div>
+									<p>Architect, deploy, and manage scalable AWS infrastructure &mdash; from EC2 and RDS to serverless with Lambda and managed storage.</p>
+									<ul>
+										<li>EC2, ECS, EKS, and Lambda architecture &amp; deployment</li>
+										<li>S3 storage, CloudFront CDN, and Route 53 DNS</li>
+										<li>RDS, DynamoDB, and ElastiCache database management</li>
+										<li>IAM, VPC, and security best practices</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-brands fa-google"></i>
+										</div>
+										<h3>Google Cloud Platform (GCP)</h3>
+									</div>
+									<p>Harness Google's global infrastructure with expert GCP setup, configuration, and optimization for your workloads.</p>
+									<ul>
+										<li>Compute Engine, Cloud Run, and GKE container deployments</li>
+										<li>Cloud Storage, Firestore, and Cloud SQL management</li>
+										<li>Cloud Functions and App Engine serverless deployments</li>
+										<li>IAM, VPC networking, and cost optimization</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-brands fa-microsoft"></i>
+										</div>
+										<h3>Microsoft Azure</h3>
+									</div>
+									<p>Full-stack Azure management &mdash; from virtual machines and App Services to Azure Functions and managed databases.</p>
+									<ul>
+										<li>Azure VMs, App Services, and AKS Kubernetes clusters</li>
+										<li>Azure Blob Storage, Cosmos DB, and SQL Database</li>
+										<li>Azure Functions and Logic Apps serverless workflows</li>
+										<li>Entra ID (Azure AD), networking, and compliance</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-hard-drive"></i>
+										</div>
+										<h3>Cloud Storage Management</h3>
+									</div>
+									<p>Secure, cost-optimized cloud storage across all major providers &mdash; with lifecycle policies, access controls, and CDN integration.</p>
+									<ul>
+										<li>S3, Azure Blob, GCS, R2 bucket setup and management</li>
+										<li>Lifecycle policies and automated tiering (hot/warm/cold)</li>
+										<li>Cross-region replication and data residency compliance</li>
+										<li>Access control, encryption, and audit logging</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-cloud-bolt"></i>
+										</div>
+										<h3>Cloudflare Serverless Hosting</h3>
+									</div>
+									<p>Deploy globally at the edge with Cloudflare Workers, Pages, KV, R2, and D1 &mdash; the modern, scalable stack that powers this very website.</p>
+									<ul>
+										<li>Cloudflare Workers and Pages deployments</li>
+										<li>KV, R2 object storage, and D1 database setup</li>
+										<li>Custom domains, DNS, and SSL management</li>
+										<li>CI/CD pipelines via Wrangler and GitHub Actions</li>
+									</ul>
+								</div>
+
+								<div class="detail-card">
+									<div class="detail-card-header">
+										<div class="detail-card-icon">
+											<i class="fa-solid fa-database"></i>
+										</div>
+										<h3>Backups &amp; Disaster Recovery</h3>
+									</div>
+									<p>Automated backups, redundancy, and tested recovery procedures so you can sleep easy knowing your data is safe.</p>
+									<ul>
+										<li>Automated daily/weekly backups to off-site storage</li>
+										<li>Database snapshots and point-in-time recovery</li>
+										<li>Failover and high-availability architecture</li>
+										<li>Regular recovery drills and documentation</li>
+									</ul>
+								</div>
+
+							</div>
+
+							<h2>Need Server Help?</h2>
+							<p>Whether it's a one-time server audit or ongoing managed hosting, we can help. <a href="contact.html">Get in touch</a> to discuss your infrastructure needs.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer_content"></div>
+
+			</div>
+
+		<!-- Scripts -->
+			<div id="footer_scripts"></div>
+
+	</body>
+</html>

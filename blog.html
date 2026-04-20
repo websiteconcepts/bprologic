@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Blog - AskAIVault</title>
+		<style>
+			body, input, select, textarea { font-family: 'Inter', sans-serif; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			.blog-hero {
+				background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+				border-radius: 20px;
+				padding: 3em 2.5em;
+				color: #fff;
+				margin-bottom: 3em;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.blog-hero::before {
+				content: '';
+				position: absolute;
+				top: -30%;
+				right: -10%;
+				width: 400px;
+				height: 400px;
+				background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+				border-radius: 50%;
+			}
+
+			.blog-hero h1 {
+				color: #fff;
+				font-size: 2.2em;
+				margin: 0 0 0.4em 0;
+				position: relative;
+				z-index: 2;
+			}
+
+			.blog-hero p {
+				color: rgba(255, 255, 255, 0.92);
+				font-size: 1.05em;
+				margin: 0;
+				max-width: 600px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.posts-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2em;
+				margin: 2em 0 3em 0;
+			}
+
+			.post-card {
+				background: #fff;
+				border: 1px solid #e2e8f0;
+				border-radius: 14px;
+				overflow: hidden;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				text-decoration: none;
+				color: inherit;
+				border-bottom: 0;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.post-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+			}
+
+			.post-thumb {
+				height: 180px;
+				background: linear-gradient(135deg, var(--c1, #4c51bf), var(--c2, #805ad5));
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 3em;
+			}
+
+			.post-thumb::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+			}
+
+			.post-card.thumb-indigo .post-thumb { --c1: #4c51bf; --c2: #667eea; }
+			.post-card.thumb-orange .post-thumb { --c1: #dd6b20; --c2: #ed8936; }
+			.post-card.thumb-teal .post-thumb { --c1: #319795; --c2: #38b2ac; }
+			.post-card.thumb-purple .post-thumb { --c1: #805ad5; --c2: #9f7aea; }
+
+			.post-body {
+				padding: 1.5em;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.post-meta {
+				display: flex;
+				align-items: center;
+				gap: 0.8em;
+				font-size: 0.8em;
+				color: #718096;
+				margin-bottom: 0.75em;
+			}
+
+			.post-tag {
+				display: inline-block;
+				padding: 0.25em 0.75em;
+				background: rgba(76, 81, 191, 0.1);
+				color: #4c51bf;
+				border-radius: 100px;
+				font-weight: 600;
+				font-size: 0.75em;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.post-card h2 {
+				font-size: 1.2em;
+				margin: 0 0 0.5em 0;
+				color: #1a202c;
+				line-height: 1.35;
+			}
+
+			.post-card .excerpt {
+				font-size: 0.9em;
+				color: #4a5568;
+				line-height: 1.6;
+				margin: 0 0 1em 0;
+				flex: 1;
+			}
+
+			.post-read-more {
+				color: #4c51bf;
+				font-size: 0.9em;
+				font-weight: 600;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.3em;
+			}
+
+			@media screen and (max-width: 768px) {
+				.posts-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div id="header_content"></div>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<div class="blog-hero">
+								<h1>The AskAIVault Blog</h1>
+								<p>Practical thoughts on building software, using AI wisely, and why fundamentals still matter.</p>
+							</div>
+
+							<div class="posts-grid">
+
+								<a href="blog-plan-first-deliver-second.html" class="post-card thumb-indigo">
+									<div class="post-thumb">
+										<i class="fa-solid fa-compass-drafting"></i>
+									</div>
+									<div class="post-body">
+										<div class="post-meta">
+											<span class="post-tag">Planning</span>
+											<span>&bull;</span>
+											<span>5 min read</span>
+										</div>
+										<h2>Plan First, Deliver Second: Why AI Makes Planning More Important, Not Less</h2>
+										<p class="excerpt">AI lets us build faster than ever &mdash; but speed without a plan is just expensive rework. Here's why going back to basics is the real AI superpower.</p>
+										<span class="post-read-more">Read article &rarr;</span>
+									</div>
+								</a>
+
+							</div>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer_content"></div>
+
+			</div>
+
+		<!-- Scripts -->
+			<div id="footer_scripts"></div>
+
+	</body>
+</html>

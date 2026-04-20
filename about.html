@@ -2,99 +2,361 @@
 <html>
 	<head>
 		<title>About Us - AskAIVault</title>
+		<style>
+			.about-hero {
+				background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+				border-radius: 16px;
+				padding: 2.5em 2.5em;
+				margin-bottom: 3em;
+				border: 1px solid #e2e8f0;
+			}
+
+			.about-hero p {
+				font-size: 1.1em;
+				line-height: 1.8;
+				color: #2d3748;
+				margin: 0 0 1em 0;
+			}
+
+			.about-hero p:last-child {
+				margin-bottom: 0;
+			}
+
+			.stats-row {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1.5em;
+				margin: 2.5em 0 3em 0;
+			}
+
+			.stat-card {
+				text-align: center;
+				padding: 1.5em 1em;
+				background: #fff;
+				border: 1px solid #e2e8f0;
+				border-radius: 12px;
+			}
+
+			.stat-card .stat-value {
+				font-size: 2em;
+				font-weight: 800;
+				color: #4c51bf;
+				line-height: 1;
+				margin-bottom: 0.3em;
+				letter-spacing: -0.02em;
+			}
+
+			.stat-card .stat-label {
+				font-size: 0.85em;
+				color: #718096;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				font-weight: 600;
+			}
+
+			.values-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5em;
+				margin: 2em 0 3em 0;
+			}
+
+			.value-card {
+				position: relative;
+				background: #ffffff;
+				border: 1px solid #e2e8f0;
+				border-radius: 12px;
+				padding: 2em 1.75em 1.75em;
+				transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+				overflow: hidden;
+			}
+
+			.value-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 4px;
+				background: var(--accent, #667eea);
+				opacity: 0.9;
+			}
+
+			.value-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+				border-color: transparent;
+			}
+
+			.value-icon {
+				width: 48px;
+				height: 48px;
+				border-radius: 10px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1em;
+				font-size: 1.2rem;
+				color: var(--accent, #667eea);
+				background: var(--accent-bg, rgba(102, 126, 234, 0.1));
+			}
+
+			.value-card.c-indigo { --accent: #4c51bf; --accent-bg: rgba(76, 81, 191, 0.1); }
+			.value-card.c-teal   { --accent: #319795; --accent-bg: rgba(49, 151, 149, 0.1); }
+			.value-card.c-orange { --accent: #dd6b20; --accent-bg: rgba(221, 107, 32, 0.1); }
+			.value-card.c-green  { --accent: #38a169; --accent-bg: rgba(56, 161, 105, 0.1); }
+			.value-card.c-purple { --accent: #805ad5; --accent-bg: rgba(128, 90, 213, 0.1); }
+			.value-card.c-rose   { --accent: #d53f8c; --accent-bg: rgba(213, 63, 140, 0.1); }
+
+			.value-card h3 {
+				font-size: 1.05em;
+				margin: 0 0 0.5em 0;
+				color: #1a202c;
+			}
+
+			.value-card p {
+				font-size: 0.9em;
+				color: #4a5568;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.why-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1em 1.5em;
+				margin: 1.5em 0 3em 0;
+			}
+
+			.why-item {
+				display: flex;
+				gap: 0.9em;
+				align-items: flex-start;
+				padding: 1em 0;
+			}
+
+			.why-item .check {
+				flex-shrink: 0;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				background: rgba(56, 161, 105, 0.12);
+				color: #38a169;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.85rem;
+			}
+
+			.why-item div {
+				line-height: 1.5;
+			}
+
+			.why-item strong {
+				color: #1a202c;
+				display: block;
+				margin-bottom: 0.2em;
+			}
+
+			.why-item span {
+				color: #4a5568;
+				font-size: 0.9em;
+			}
+
+			.cta-block {
+				background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+				border-radius: 16px;
+				padding: 2.5em;
+				color: #fff;
+				margin-top: 3em;
+			}
+
+			.cta-block h2 {
+				color: #fff;
+				margin: 0 0 0.5em 0;
+			}
+
+			.cta-block p {
+				color: rgba(255, 255, 255, 0.9);
+				margin: 0 0 1.5em 0;
+			}
+
+			.cta-block .button {
+				background: #fff;
+				color: #4c51bf;
+				box-shadow: none;
+			}
+
+			.cta-block .button:hover {
+				background: #f7fafc;
+				color: #4c51bf;
+			}
+
+			@media screen and (max-width: 980px) {
+				.values-grid { grid-template-columns: repeat(2, 1fr); }
+				.stats-row { grid-template-columns: repeat(2, 1fr); }
+			}
+
+			@media screen and (max-width: 560px) {
+				.values-grid { grid-template-columns: 1fr; }
+				.stats-row { grid-template-columns: repeat(2, 1fr); }
+				.why-grid { grid-template-columns: 1fr; }
+				.about-hero { padding: 2em 1.5em; }
+				.cta-block { padding: 2em 1.5em; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<div id="header_content"></div>
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
 							<header>
 								<h1>About Us</h1>
+								<p>A technology company built on fundamentals &mdash; with AI where it genuinely helps.</p>
 							</header>
 
 							<div class="about-hero">
-								<p>AskAIVault is a technology company focused on delivering intelligent, scalable, and secure digital solutions. We combine the power of artificial intelligence with modern software engineering to help businesses automate processes, unlock insights, and build products that make a real impact.</p>
-								<p>Founded with the belief that every business deserves access to cutting-edge technology, we work with startups, growing companies, and enterprises to turn complex challenges into elegant solutions.</p>
+								<p>AskAIVault is a technology company that believes the best software comes from getting the basics right. Clean code. Reliable infrastructure. Thoughtful design. Systems that just work.</p>
+								<p>We help businesses with everything from server management and web development to cloud infrastructure and SaaS customization. And when AI is the right fit for the problem, we're the team to build it &mdash; with the same discipline we bring to every line of code.</p>
+							</div>
+
+							<div class="stats-row">
+								<div class="stat-card">
+									<div class="stat-value">Full-Stack</div>
+									<div class="stat-label">Capability</div>
+								</div>
+								<div class="stat-card">
+									<div class="stat-value">24/7</div>
+									<div class="stat-label">Support</div>
+								</div>
+								<div class="stat-card">
+									<div class="stat-value">Cloud</div>
+									<div class="stat-label">Native</div>
+								</div>
+								<div class="stat-card">
+									<div class="stat-value">AI</div>
+									<div class="stat-label">When It Fits</div>
+								</div>
 							</div>
 
 							<h2>What We Do</h2>
-							<p>From AI-powered chatbots and custom machine learning models to full-stack web applications and cloud infrastructure, we provide end-to-end technology services. Our team handles everything from initial consultation and architecture design to development, deployment, and ongoing support.</p>
-							<p>Whether you need to build a new product from scratch, modernize legacy systems, or integrate AI into your existing workflows, we have the expertise to deliver.</p>
+							<p>We build and maintain the full stack of modern business technology. From Linux server administration and database optimization, to cloud infrastructure on AWS, Google Cloud, Azure, and Cloudflare. From full-stack web applications to SaaS customization with Zoho, monday.com, and Salesforce. And yes &mdash; AI-powered knowledge bases, chatbots, and automation when they genuinely move the needle.</p>
+							<p>We don't chase trends. We solve problems.</p>
 
 							<h2>Our Values</h2>
 							<div class="values-grid">
-								<div class="value-card">
-									<div class="value-icon blue">
-										<i class="fa-solid fa-bullseye"></i>
+								<div class="value-card c-indigo">
+									<div class="value-icon">
+										<i class="fa-solid fa-cube"></i>
 									</div>
-									<h3>Innovation First</h3>
-									<p>We stay ahead of the curve, adopting emerging technologies to deliver future-ready solutions.</p>
+									<h3>Fundamentals First</h3>
+									<p>Clean code, solid architecture, reliable infrastructure. Everything else builds on top of this.</p>
 								</div>
 
-								<div class="value-card">
-									<div class="value-icon teal">
-										<i class="fa-solid fa-handshake"></i>
+								<div class="value-card c-teal">
+									<div class="value-icon">
+										<i class="fa-solid fa-compass"></i>
 									</div>
-									<h3>Client Partnership</h3>
-									<p>We treat every project as a partnership, working closely with you to understand your goals and deliver results.</p>
+									<h3>Pragmatic Approach</h3>
+									<p>The right tool for the job &mdash; whether that's AI, a simple script, or a well-designed database schema.</p>
 								</div>
 
-								<div class="value-card">
-									<div class="value-icon orange">
-										<i class="fa-solid fa-shield-halved"></i>
+								<div class="value-card c-orange">
+									<div class="value-icon">
+										<i class="fa-solid fa-lock"></i>
 									</div>
-									<h3>Security & Trust</h3>
+									<h3>Security &amp; Trust</h3>
 									<p>Your data and privacy are paramount. We build with security best practices at every layer.</p>
 								</div>
 
-								<div class="value-card">
-									<div class="value-icon green">
-										<i class="fa-solid fa-leaf"></i>
+								<div class="value-card c-green">
+									<div class="value-icon">
+										<i class="fa-solid fa-wand-magic-sparkles"></i>
 									</div>
 									<h3>Simplicity</h3>
-									<p>We believe powerful technology should be simple to use. Clean design and intuitive experiences drive everything we build.</p>
+									<p>Powerful technology should feel simple. Clean design and intuitive experiences drive everything we build.</p>
 								</div>
 
-								<div class="value-card">
-									<div class="value-icon purple">
-										<i class="fa-solid fa-arrows-spin"></i>
+								<div class="value-card c-purple">
+									<div class="value-icon">
+										<i class="fa-solid fa-rocket"></i>
 									</div>
 									<h3>Agility</h3>
 									<p>We move fast without cutting corners, adapting quickly to evolving requirements and market changes.</p>
 								</div>
 
-								<div class="value-card">
-									<div class="value-icon red">
-										<i class="fa-solid fa-heart"></i>
+								<div class="value-card c-rose">
+									<div class="value-icon">
+										<i class="fa-solid fa-award"></i>
 									</div>
 									<h3>Quality</h3>
-									<p>Every line of code, every design decision, and every deployment is held to the highest standard.</p>
+									<p>Every line of code, every design decision, every deployment is held to the highest standard.</p>
 								</div>
 							</div>
 
-							<div class="why-section">
-								<h2>Why Choose AskAIVault?</h2>
-								<ul>
-									<li><strong>AI Expertise</strong> &mdash; Deep experience in machine learning, NLP, computer vision, and generative AI</li>
-									<li><strong>Full-Stack Capability</strong> &mdash; From frontend to backend, cloud to mobile, we cover the entire stack</li>
-									<li><strong>Transparent Process</strong> &mdash; Clear communication, regular updates, and no hidden surprises</li>
-									<li><strong>Scalable Solutions</strong> &mdash; We build for today and architect for tomorrow</li>
-									<li><strong>Dedicated Support</strong> &mdash; Ongoing maintenance and support to keep your systems running smoothly</li>
-								</ul>
+							<h2>Why Choose AskAIVault?</h2>
+							<div class="why-grid">
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>Basics Done Right</strong>
+										<span>Reliable servers, clean code, and solid architecture &mdash; the foundation that everything else depends on.</span>
+									</div>
+								</div>
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>Full-Stack Capability</strong>
+										<span>From frontend to backend, cloud to data, SaaS to AI &mdash; we cover the entire stack.</span>
+									</div>
+								</div>
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>Transparent Process</strong>
+										<span>Clear communication, regular updates, and no hidden surprises.</span>
+									</div>
+								</div>
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>Scalable Solutions</strong>
+										<span>We build for today and architect for tomorrow.</span>
+									</div>
+								</div>
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>Dedicated Support</strong>
+										<span>Ongoing maintenance and support to keep your systems running smoothly.</span>
+									</div>
+								</div>
+								<div class="why-item">
+									<div class="check"><i class="fa-solid fa-check"></i></div>
+									<div>
+										<strong>AI Expertise, When Needed</strong>
+										<span>Machine learning, NLP, generative AI &mdash; applied thoughtfully where it creates real value.</span>
+									</div>
+								</div>
 							</div>
 
-							<h2>Get in Touch</h2>
-							<p>Ready to explore how AI and technology can transform your business? We'd love to hear from you.</p>
-							<ul class="actions">
-								<li><a href="contact.html" class="button primary">Contact Us</a></li>
-							</ul>
+							<div class="cta-block">
+								<h2>Let's Build Something That Works</h2>
+								<p>Whether you need rock-solid infrastructure, a new product, SaaS customization, or an AI-powered solution &mdash; we'll help you pick the right approach and deliver it well.</p>
+								<ul class="actions">
+									<li><a href="contact.html" class="button">Get in Touch</a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 
-<!-- Footer -->
+				<!-- Footer -->
 					<div id="footer_content"></div>
+
 			</div>
 
 		<!-- Scripts -->

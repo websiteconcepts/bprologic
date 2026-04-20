@@ -10,68 +10,480 @@
 		<style>
 			body, input, select, textarea { font-family: 'Inter', sans-serif; }
 			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			/* HERO */
+			.hero {
+				position: relative;
+				background: linear-gradient(135deg, #4c51bf 0%, #667eea 50%, #805ad5 100%);
+				border-radius: 20px;
+				padding: 3.5em 2.5em;
+				color: #fff;
+				margin-bottom: 3em;
+				overflow: hidden;
+			}
+
+			.hero::before {
+				content: '';
+				position: absolute;
+				top: -50%;
+				right: -10%;
+				width: 500px;
+				height: 500px;
+				background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+				border-radius: 50%;
+			}
+
+			.hero::after {
+				content: '';
+				position: absolute;
+				bottom: -30%;
+				left: -10%;
+				width: 400px;
+				height: 400px;
+				background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+				border-radius: 50%;
+			}
+
+			.hero-content {
+				position: relative;
+				z-index: 2;
+				max-width: 720px;
+			}
+
+			.hero-badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5em;
+				padding: 0.4em 1em;
+				background: rgba(255, 255, 255, 0.15);
+				border: 1px solid rgba(255, 255, 255, 0.25);
+				border-radius: 100px;
+				font-size: 0.8em;
+				margin-bottom: 1.2em;
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+			}
+
+			.hero-badge i {
+				color: #fbd38d;
+			}
+
+			.hero h1 {
+				color: #fff;
+				font-size: 2.4em;
+				line-height: 1.15;
+				margin: 0 0 0.5em 0;
+			}
+
+			.hero p {
+				color: rgba(255, 255, 255, 0.92);
+				font-size: 1.1em;
+				line-height: 1.7;
+				margin: 0 0 1.5em 0;
+			}
+
+			.hero .button.primary {
+				background: #fff;
+				color: #4c51bf !important;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			.hero .button.primary:hover {
+				background: #f7fafc;
+				color: #4c51bf;
+				transform: translateY(-1px);
+			}
+
+			.hero .button:not(.primary) {
+				background: rgba(255, 255, 255, 0.15);
+				color: #fff !important;
+				border: 1px solid rgba(255, 255, 255, 0.35);
+			}
+
+			.hero .button:not(.primary):hover {
+				background: rgba(255, 255, 255, 0.25);
+				color: #fff;
+			}
+
+			/* PHILOSOPHY CARD */
+			.philosophy-card {
+				display: grid;
+				grid-template-columns: 80px 1fr;
+				gap: 1.5em;
+				align-items: start;
+				background: #fff8f1;
+				border-left: 4px solid #ed8936;
+				border-radius: 12px;
+				padding: 1.8em 2em;
+				margin: 2em 0 3em 0;
+			}
+
+			.philosophy-card .icon-wrap {
+				width: 60px;
+				height: 60px;
+				border-radius: 12px;
+				background: linear-gradient(135deg, #ed8936, #dd6b20);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 1.5em;
+				flex-shrink: 0;
+			}
+
+			.philosophy-card h3 {
+				margin: 0 0 0.5em 0;
+				color: #7b341e;
+				font-size: 1.2em;
+			}
+
+			.philosophy-card p {
+				color: #744210;
+				margin: 0;
+				line-height: 1.7;
+			}
+
+			/* SERVICES GRID */
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5em;
+				margin: 2em 0 3em 0;
+			}
+
+			.svc-card {
+				background: #ffffff;
+				border: 1px solid #e2e8f0;
+				border-radius: 14px;
+				padding: 1.8em 1.5em;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				color: inherit;
+				border-bottom: 0;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.svc-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background: var(--svc-accent);
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 0.3s ease;
+			}
+
+			.svc-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+				border-color: transparent;
+			}
+
+			.svc-card:hover::before {
+				transform: scaleX(1);
+			}
+
+			.svc-icon {
+				width: 52px;
+				height: 52px;
+				border-radius: 12px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.3em;
+				color: #fff;
+				margin-bottom: 1em;
+				background: var(--svc-accent);
+			}
+
+			.svc-card.c-indigo { --svc-accent: linear-gradient(135deg, #4c51bf, #667eea); }
+			.svc-card.c-teal   { --svc-accent: linear-gradient(135deg, #319795, #38b2ac); }
+			.svc-card.c-orange { --svc-accent: linear-gradient(135deg, #dd6b20, #ed8936); }
+			.svc-card.c-green  { --svc-accent: linear-gradient(135deg, #38a169, #48bb78); }
+			.svc-card.c-purple { --svc-accent: linear-gradient(135deg, #805ad5, #9f7aea); }
+			.svc-card.c-rose   { --svc-accent: linear-gradient(135deg, #d53f8c, #ed64a6); }
+
+			.svc-card h3 {
+				font-size: 1em;
+				margin: 0 0 0.4em 0;
+				color: #1a202c;
+			}
+
+			.svc-card p {
+				font-size: 0.85em;
+				color: #718096;
+				line-height: 1.55;
+				margin: 0;
+			}
+
+			/* WHY CHOOSE US - ACCENTED FEATURE BOXES */
+			.why-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.5em;
+				margin: 2em 0 3em 0;
+			}
+
+			.why-box {
+				background: #fff;
+				border: 1px solid #e2e8f0;
+				border-radius: 14px;
+				padding: 2em 1.75em;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.why-box:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+			}
+
+			.why-box .why-number {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				font-weight: 800;
+				font-size: 1.1em;
+				color: #fff;
+				margin-bottom: 1em;
+			}
+
+			.why-box.n1 .why-number { background: linear-gradient(135deg, #4c51bf, #667eea); }
+			.why-box.n2 .why-number { background: linear-gradient(135deg, #38a169, #48bb78); }
+			.why-box.n3 .why-number { background: linear-gradient(135deg, #dd6b20, #ed8936); }
+
+			.why-box h3 {
+				font-size: 1.1em;
+				margin: 0 0 0.5em 0;
+				color: #1a202c;
+			}
+
+			.why-box p {
+				font-size: 0.92em;
+				color: #4a5568;
+				line-height: 1.65;
+				margin: 0;
+			}
+
+			/* FINAL CTA BLOCK */
+			.final-cta {
+				background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+				border-radius: 20px;
+				padding: 3em 2.5em;
+				color: #fff;
+				margin-top: 3em;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.final-cta::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(circle at 30% 40%, rgba(102, 126, 234, 0.25) 0%, rgba(0, 0, 0, 0) 60%);
+			}
+
+			.final-cta > * {
+				position: relative;
+				z-index: 2;
+			}
+
+			.final-cta h2 {
+				color: #fff;
+				margin: 0 0 0.5em 0;
+			}
+
+			.final-cta p {
+				color: rgba(255, 255, 255, 0.85);
+				margin: 0 auto 1.5em;
+				max-width: 600px;
+			}
+
+			.final-cta .button.primary {
+				background: #fff;
+				color: #1a202c !important;
+			}
+
+			.final-cta .button.primary:hover {
+				background: #edf2f7;
+				color: #1a202c;
+			}
+
+			.final-cta .button:not(.primary) {
+				background: transparent;
+				color: #fff !important;
+				border: 1px solid rgba(255, 255, 255, 0.35);
+			}
+
+			.final-cta .button:not(.primary):hover {
+				background: rgba(255, 255, 255, 0.1);
+				color: #fff;
+			}
+
+			/* SECTION TITLE */
+			.section-eyebrow {
+				display: inline-block;
+				font-size: 0.8em;
+				font-weight: 700;
+				color: #4c51bf;
+				text-transform: uppercase;
+				letter-spacing: 0.12em;
+				margin-bottom: 0.5em;
+			}
+
+			.section-heading {
+				margin-top: 0;
+				margin-bottom: 0.3em;
+			}
+
+			.section-sub {
+				color: #718096;
+				font-size: 1em;
+				margin-bottom: 1.5em;
+			}
+
+			@media screen and (max-width: 980px) {
+				.services-grid { grid-template-columns: repeat(2, 1fr); }
+				.why-grid { grid-template-columns: 1fr; }
+				.philosophy-card { grid-template-columns: 1fr; }
+				.hero h1 { font-size: 2em; }
+			}
+
+			@media screen and (max-width: 560px) {
+				.services-grid { grid-template-columns: 1fr; }
+				.hero { padding: 2.5em 1.5em; }
+				.hero h1 { font-size: 1.7em; }
+				.final-cta { padding: 2.5em 1.5em; }
+			}
 		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<div id="header_content"></div>
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<header>
-								<h1>Welcome to AskAIVault</h1>
-								<p>Your trusted source for AI-powered insights and solutions. We help businesses harness the power of artificial intelligence, modern web technologies, and robust infrastructure to drive growth and innovation.</p>
-							</header>
-							<ul class="actions">
-								<li><a href="services.html" class="button primary">Our Solutions</a></li>
-								<li><a href="contact.html" class="button">Get in Touch</a></li>
-							</ul>
 
-							<hr />
-
-							<h2>What We Do</h2>
-							<p>At AskAIVault, we build intelligent systems that solve real business problems. From AI-powered knowledge bases that slash support response times, to sales intelligence tools that find and qualify leads automatically &mdash; we turn complex technology into competitive advantage.</p>
-
-							<h2>Built for Businesses That Want to Move Fast</h2>
-							<p>Whether you're a startup looking to integrate AI into your product, or an established company modernizing legacy systems, we provide end-to-end technology services:</p>
-							<ul>
-								<li><strong>AI &amp; Automation</strong> &mdash; Custom chatbots, knowledge bases, document processing, and predictive analytics</li>
-								<li><strong>Web &amp; Mobile Development</strong> &mdash; Full-stack applications built with modern frameworks and scalable architecture</li>
-								<li><strong>Cloud &amp; Infrastructure</strong> &mdash; Server management, DevOps, CI/CD pipelines, and security hardening</li>
-								<li><strong>Data &amp; Analytics</strong> &mdash; Dashboards, reporting, and data pipelines that turn raw data into decisions</li>
-							</ul>
-
-							<h2>Why Businesses Choose Us</h2>
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<h3>AI-First Approach</h3>
-									<p>We don't just build software &mdash; we build intelligent software. Every solution is designed with AI at its core to deliver maximum impact.</p>
-								</div>
-								<div class="col-4 col-6-medium col-12-small">
-									<h3>End-to-End Delivery</h3>
-									<p>From consultation and architecture to development, deployment, and ongoing support &mdash; we handle the full lifecycle so you can focus on your business.</p>
-								</div>
-								<div class="col-4 col-6-medium col-12-small">
-									<h3>Results That Matter</h3>
-									<p>We measure success by your outcomes: faster response times, lower costs, higher conversion rates, and happier customers.</p>
+							<!-- Hero -->
+							<div class="hero">
+								<div class="hero-content">
+									<div class="hero-badge">
+										<i class="fa-solid fa-sparkles"></i>
+										<span>Technology with substance, not hype</span>
+									</div>
+									<h1>Basics First.<br />AI Where It Matters.</h1>
+									<p>We're a technology company that believes great software starts with solid fundamentals &mdash; clean code, reliable infrastructure, thoughtful design. AI is a powerful tool, but it's just one tool. We apply it where it genuinely adds value.</p>
+									<ul class="actions">
+										<li><a href="services.html" class="button primary">Our Solutions</a></li>
+										<li><a href="contact.html" class="button">Get in Touch</a></li>
+									</ul>
 								</div>
 							</div>
 
-							<hr />
+							<!-- Philosophy Card -->
+							<div class="philosophy-card">
+								<div class="icon-wrap">
+									<i class="fa-solid fa-lightbulb"></i>
+								</div>
+								<div>
+									<h3>Our Philosophy</h3>
+									<p>The AI hype cycle has convinced many businesses to bolt AI onto everything. We take the opposite approach: understand the problem first, then pick the right tool. Sometimes that's a machine learning model. More often, it's good database design, a reliable server, or a simple automation. We build what works.</p>
+								</div>
+							</div>
 
-							<h2>Ready to Transform Your Business?</h2>
-							<p>Let's discuss how AI and modern technology can solve your toughest challenges. Our team is ready to help you get started.</p>
-							<ul class="actions">
-								<li><a href="contact.html" class="button primary">Contact Us</a></li>
-								<li><a href="about.html" class="button">Learn About Us</a></li>
-							</ul>
+							<!-- What We Do -->
+							<span class="section-eyebrow">What We Do</span>
+							<h2 class="section-heading">Full-Stack Technology Services</h2>
+							<p class="section-sub">From foundational infrastructure to intelligent applications &mdash; we cover the whole stack.</p>
+
+							<div class="services-grid">
+								<a href="server-management.html" class="svc-card c-teal">
+									<div class="svc-icon"><i class="fa-solid fa-server"></i></div>
+									<h3>Solid Foundations</h3>
+									<p>Server management, Linux admin, Apache/Nginx, databases, security, and backups.</p>
+								</a>
+
+								<a href="services.html" class="svc-card c-orange">
+									<div class="svc-icon"><i class="fa-solid fa-code"></i></div>
+									<h3>Web &amp; App Development</h3>
+									<p>Full-stack web apps built with modern frameworks and clean architecture.</p>
+								</a>
+
+								<a href="server-management.html" class="svc-card c-indigo">
+									<div class="svc-icon"><i class="fa-solid fa-cloud"></i></div>
+									<h3>Cloud Infrastructure</h3>
+									<p>AWS, Google Cloud, Azure, and Cloudflare serverless deployments.</p>
+								</a>
+
+								<a href="saas-management.html" class="svc-card c-rose">
+									<div class="svc-icon"><i class="fa-solid fa-gears"></i></div>
+									<h3>SaaS Customization</h3>
+									<p>Zoho, monday.com, Salesforce &mdash; tailored and integrated to your workflows.</p>
+								</a>
+
+								<a href="services.html" class="svc-card c-green">
+									<div class="svc-icon"><i class="fa-solid fa-chart-line"></i></div>
+									<h3>Data &amp; Analytics</h3>
+									<p>Dashboards, reporting, and pipelines that turn raw data into decisions.</p>
+								</a>
+
+								<a href="ai-solutions.html" class="svc-card c-purple">
+									<div class="svc-icon"><i class="fa-solid fa-robot"></i></div>
+									<h3>AI That Works</h3>
+									<p>Knowledge bases, automation, and assistants that solve real problems.</p>
+								</a>
+							</div>
+
+							<!-- Why Businesses Choose Us -->
+							<span class="section-eyebrow">Why Us</span>
+							<h2 class="section-heading">Why Businesses Choose AskAIVault</h2>
+							<p class="section-sub">Three principles that shape every project we deliver.</p>
+
+							<div class="why-grid">
+								<div class="why-box n1">
+									<div class="why-number">1</div>
+									<h3>Fundamentals First</h3>
+									<p>Reliable servers, clean code, and solid architecture come before anything else. If the basics aren't right, no amount of AI will save you.</p>
+								</div>
+								<div class="why-box n2">
+									<div class="why-number">2</div>
+									<h3>Pragmatic Technology</h3>
+									<p>We recommend simple solutions when simple is best. We use AI when AI is best. No hype, no over-engineering &mdash; just the right tool for the job.</p>
+								</div>
+								<div class="why-box n3">
+									<div class="why-number">3</div>
+									<h3>Results That Matter</h3>
+									<p>We measure success by your outcomes: faster response times, lower costs, fewer bugs, and systems that just work day after day.</p>
+								</div>
+							</div>
+
+							<!-- Final CTA -->
+							<div class="final-cta">
+								<h2>Let's Build Something That Works</h2>
+								<p>Whether you need a rock-solid server, a custom web app, a SaaS integration, or an AI-powered solution &mdash; we'll help you pick the right approach and deliver it well.</p>
+								<ul class="actions">
+									<li><a href="contact.html" class="button primary">Contact Us</a></li>
+									<li><a href="about.html" class="button">Learn About Us</a></li>
+								</ul>
+							</div>
+
 						</div>
 					</div>
 
 					<!-- Footer -->
 					<div id="footer_content"></div>
-								
 
 			</div>
 

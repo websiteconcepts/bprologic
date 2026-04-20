@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Plan First, Deliver Second - AskAIVault Blog</title>
+		<style>
+			body, input, select, textarea { font-family: 'Inter', sans-serif; }
+			h1, h2, h3, h4, h5, h6 { font-weight: 800; letter-spacing: -0.02em; }
+
+			.article-hero {
+				background: linear-gradient(135deg, #4c51bf 0%, #667eea 100%);
+				border-radius: 20px;
+				padding: 3em 2.5em 3em;
+				color: #fff;
+				margin-bottom: 3em;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.article-hero::before {
+				content: '';
+				position: absolute;
+				top: -30%;
+				right: -10%;
+				width: 450px;
+				height: 450px;
+				background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+				border-radius: 50%;
+			}
+
+			.article-hero > * {
+				position: relative;
+				z-index: 2;
+			}
+
+			.post-tag-hero {
+				display: inline-block;
+				padding: 0.3em 0.9em;
+				background: rgba(255, 255, 255, 0.2);
+				color: #fff;
+				border-radius: 100px;
+				font-weight: 600;
+				font-size: 0.75em;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				margin-bottom: 1em;
+				border: 1px solid rgba(255, 255, 255, 0.25);
+			}
+
+			.article-hero h1 {
+				color: #fff;
+				font-size: 2.3em;
+				line-height: 1.2;
+				margin: 0 0 0.6em 0;
+				max-width: 800px;
+			}
+
+			.article-meta {
+				display: flex;
+				align-items: center;
+				gap: 1.2em;
+				color: rgba(255, 255, 255, 0.9);
+				font-size: 0.9em;
+			}
+
+			.article-meta .dot {
+				width: 4px;
+				height: 4px;
+				background: rgba(255, 255, 255, 0.6);
+				border-radius: 50%;
+			}
+
+			.back-to-blog {
+				display: inline-block;
+				margin-bottom: 1.5em;
+				font-size: 0.9em;
+				color: #4c51bf;
+			}
+
+			.article-body {
+				margin: 0 auto;
+			}
+
+			.article-body p {
+				font-size: 1.02em;
+				line-height: 1.8;
+				color: #2d3748;
+				margin: 0 0 1.3em 0;
+			}
+
+			.article-body h2 {
+				font-size: 1.6em;
+				margin: 2em 0 0.6em 0;
+				color: #1a202c;
+			}
+
+			.article-body h3 {
+				font-size: 1.2em;
+				margin: 1.5em 0 0.5em 0;
+				color: #2d3748;
+			}
+
+			.pull-quote {
+				border-left: 4px solid #4c51bf;
+				background: linear-gradient(90deg, rgba(76, 81, 191, 0.06) 0%, rgba(76, 81, 191, 0) 100%);
+				padding: 1.2em 1.5em;
+				margin: 2em 0;
+				font-size: 1.1em;
+				line-height: 1.6;
+				color: #2d3748;
+				border-radius: 0 10px 10px 0;
+				font-weight: 600;
+			}
+
+			.insight-box {
+				display: grid;
+				grid-template-columns: 60px 1fr;
+				gap: 1.2em;
+				align-items: start;
+				background: #fff8f1;
+				border-left: 4px solid #ed8936;
+				border-radius: 12px;
+				padding: 1.5em 1.8em;
+				margin: 2em 0;
+			}
+
+			.insight-box .icon-wrap {
+				width: 48px;
+				height: 48px;
+				border-radius: 10px;
+				background: linear-gradient(135deg, #ed8936, #dd6b20);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 1.2em;
+				flex-shrink: 0;
+			}
+
+			.insight-box h3 {
+				margin: 0 0 0.3em 0;
+				color: #7b341e;
+				font-size: 1em;
+			}
+
+			.insight-box p {
+				color: #744210;
+				margin: 0;
+				font-size: 0.95em;
+				line-height: 1.65;
+			}
+
+			.key-list {
+				list-style: none;
+				padding: 0;
+				margin: 1.5em 0 2em 0;
+			}
+
+			.key-list li {
+				display: grid;
+				gap: 0.8em;
+				align-items: start;
+				padding: 0.4em 0;
+				color: #2d3748;
+				line-height: 1.7;
+			}
+
+			.key-list li::before {
+				content: '';
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: rgba(56, 161, 105, 0.15);
+				color: #38a169;
+				background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'><path fill='%2338a169' d='M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z'/></svg>");
+				background-repeat: no-repeat;
+				background-position: center;
+				margin-top: 0.3em;
+			}
+
+			.article-cta {
+				background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+				border-radius: 16px;
+				padding: 2.5em 2em;
+				color: #fff;
+				margin: 3em 0 1em 0;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.article-cta::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.25) 0%, rgba(0, 0, 0, 0) 60%);
+			}
+
+			.article-cta > * {
+				position: relative;
+				z-index: 2;
+			}
+
+			.article-cta h2 {
+				color: #fff;
+				margin: 0 0 0.4em 0;
+				font-size: 1.5em;
+			}
+
+			.article-cta p {
+				color: rgba(255, 255, 255, 0.85);
+				margin: 0 auto 1.4em;
+				max-width: 520px;
+			}
+
+			.article-cta .button.primary {
+				background: #fff;
+				color: #1a202c !important;
+			}
+
+			.article-cta .button.primary:hover {
+				background: #edf2f7;
+				color: #1a202c;
+			}
+
+			@media screen and (max-width: 560px) {
+				.article-hero { padding: 2em 1.5em; }
+				.article-hero h1 { font-size: 1.6em; }
+				.insight-box { grid-template-columns: 1fr; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div id="header_content"></div>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<a href="blog.html" class="back-to-blog">&larr; Back to Blog</a>
+
+							<div class="article-hero">
+								<span class="post-tag-hero">Planning</span>
+								<h1>Plan First, Deliver Second: Why AI Makes Planning More Important, Not Less</h1>
+								<div class="article-meta">
+									<span><i class="fa-regular fa-clock"></i> 5 min read</span>
+									<span class="dot"></span>
+									<span>AskAIVault Team</span>
+								</div>
+							</div>
+
+							<div class="article-body">
+
+								<p>There's a quiet mistake happening in software projects everywhere: teams are skipping the planning phase because AI makes everything <em>feel</em> faster. A prompt here, a generated module there, and suddenly you have something that runs. It looks like progress. It looks like delivery.</p>
+
+								<p>But weeks later, those same teams are still tweaking, re-tweaking, and untangling the code they generated on day one. The output was fast. The outcome? Not so much.</p>
+
+								<div class="pull-quote">
+									Planning isn't the slow part of a project. Skipping planning is.
+								</div>
+
+								<h2>Planning Is the Most Important Part of a Project</h2>
+
+								<p>This isn't a new idea. Every good software engineer has known it for decades. Before a single line of code is written, the best teams ask: <em>What problem are we actually solving? Who is it for? What does "done" look like? What edge cases will trip us up? What's the simplest thing that could possibly work?</em></p>
+
+								<p>The answers to those questions shape everything that follows &mdash; architecture, data model, APIs, deployment, testing, the works. A project with strong answers to those questions can be built with mediocre tools. A project without them will fail no matter how fast your tools are.</p>
+
+								<h2>AI Changed the Pace &mdash; But Not the Fundamentals</h2>
+
+								<p>Here's the thing: AI <em>has</em> changed software development, and profoundly. You can now scaffold an app in minutes. You can generate boilerplate, tests, and even whole modules in seconds. You can see things in action <strong>absurdly</strong> fast.</p>
+
+								<p>And that speed is intoxicating. When you can prompt an AI and see a working prototype in 5 minutes, it feels wasteful to spend 5 days on a plan. Why write requirements when you can just... build the thing and iterate?</p>
+
+								<p>Because "iterate" is code for "tweak, retweak, and undo." That's where projects quietly drown. Every unplanned decision becomes three unplanned decisions. Every generated module needs to be re-read, re-understood, re-fit into the system. Teams end up spending 10x the time they "saved" by skipping the plan.</p>
+
+								<div class="insight-box">
+									<div class="icon-wrap">
+										<i class="fa-solid fa-lightbulb"></i>
+									</div>
+									<div>
+										<h3>The AI paradox</h3>
+										<p>The faster AI lets us build, the <strong>more</strong> we need to plan. Because when delivery is cheap, the real cost moves upstream &mdash; to decisions about what to build, and why.</p>
+									</div>
+								</div>
+
+								<h2>Use AI to Strengthen the Basics, Not Skip Them</h2>
+
+								<p>Going back to basics doesn't mean rejecting AI. It means using AI to <em>reinforce</em> the traditional steps, not bypass them. Here's what that looks like in practice:</p>
+
+								<ul class="key-list">
+									<li><strong>Requirements gathering.</strong> Use AI to brainstorm edge cases, generate user stories, and pressure-test your assumptions. Not to skip the conversation with stakeholders &mdash; to have a better one.</li>
+									<li><strong>Architecture.</strong> Use AI to compare approaches, spot trade-offs, and evaluate technologies you're unfamiliar with. Not to let it pick your stack blindly.</li>
+									<li><strong>Data modeling.</strong> Use AI to review schemas for consistency and foresee scaling issues. Not to autogenerate tables without thinking about the domain.</li>
+									<li><strong>Estimation.</strong> Use AI to break down work into tasks and flag risks. Not to replace your own judgment about what's hard and what's not.</li>
+									<li><strong>Documentation.</strong> Use AI to turn plans into clear written artifacts everyone on the team can read. Not as an excuse to avoid writing them.</li>
+								</ul>
+
+								<p>When AI is used this way, the planning phase actually gets <strong>better</strong> than it used to be. You explore more alternatives. You catch more risks early. You end up with a sharper plan in less time.</p>
+
+								<h2>Who's in Charge: You or the AI?</h2>
+
+								<p>This is the real question. Every project has a direction &mdash; a set of decisions about what matters, what doesn't, and what to do next. When you plan thoroughly, <em>you</em> are in charge of that direction. You're ahead of the AI. The AI becomes your tool: an exceptionally fast, knowledgeable, tireless assistant that executes under your guidance.</p>
+
+								<p>But the moment you skip planning and ask AI to "just build it," the roles invert. The AI starts making the decisions &mdash; about structure, naming, approach, trade-offs. You're no longer driving; you're reacting. Every new feature is a negotiation with code you didn't write and don't fully understand. You're always one step behind, always tweaking.</p>
+
+								<div class="pull-quote">
+									If you're ahead of the AI, it makes you 10x faster. If the AI is ahead of you, it makes your project 10x messier.
+								</div>
+
+								<h2>The New Basics</h2>
+
+								<p>So here's what's really going on. The traditional way of thinking about software projects &mdash; plan, design, build, test, ship &mdash; isn't outdated. It's <strong>more relevant than ever</strong>. What's changed is that AI now lets us do each of those steps faster and better, <em>if</em> we still do them.</p>
+
+								<p>Skipping planning because "AI is fast" is the same mistake as skipping version control because "commits take time." It feels like an optimization. It isn't. It's a trap that shows up as rework weeks later.</p>
+
+								<p>At AskAIVault, we start every project with the boring, old-fashioned work of understanding the problem, mapping the solution, and getting the fundamentals right. Then we let AI make us faster at executing that plan. That's how we stay in control. That's how the projects we ship actually work.</p>
+
+								<p>Basics first. AI where it matters. In that order.</p>
+
+								<div class="article-cta">
+									<h2>Got a project to plan?</h2>
+									<p>If you want a team that thinks first and builds second &mdash; with AI as a tool, not a crutch &mdash; let's talk.</p>
+
+									<p><a href="contact.html" class="button primary">Get in Touch</a></p>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer_content"></div>
+
+			</div>
+
+		<!-- Scripts -->
+			<div id="footer_scripts"></div>
+
+	</body>
+</html>
